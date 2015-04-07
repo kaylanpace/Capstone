@@ -1,7 +1,6 @@
 package employee;
 
 import java.io.Serializable;
-import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,21 +12,31 @@ public class Employee implements Serializable {
     // Persistent Fields:
     @Id @GeneratedValue
     Long id;
-    private String name;
-    private Date signingDate;
+    private String empFirstName;
+    private String empLastName;
+    private int ssn;
+    private String position;
+    private int age;
+    private boolean isAdmin;
  
     // Constructors:
     public Employee() {
     }
  
-    public Employee(String name) {
-        this.name = name;
-        this.signingDate = new Date(System.currentTimeMillis());
+    public Employee(String empFirstName, String empLastName, int ssn, String position, int age, boolean isAdmin ) {
+       
+        this.empFirstName = empFirstName;
+        this.empLastName = empLastName;
+        this.ssn = ssn;
+        this.position = position;
+        this.age = age;
+        this.isAdmin = isAdmin;
     }
  
     // String Representation:
     @Override
     public String toString() {
-        return name + " (signed on " + signingDate + ")";
+        return id + " " + empFirstName + " " + empLastName
+        		+ " " + ssn + " " + position + " " + age + " " + isAdmin;
     }
 }
