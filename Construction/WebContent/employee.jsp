@@ -13,14 +13,32 @@
     
     	
         <form method="POST" action="employee">
-        
-          First Name: <input type="text" name="empFirstName" />
-          Last Name: <input type="text" name="empLastName" />
-           Social Security Number: <input type="text" name="ssn" />
-          Position: <input type="text" name="position" />
-           Age: <input type="text" name="age" />
-          Admin: <input type="checkbox" name="isAdmin"/>
-          
+        	<table>
+        	
+        	<tr>
+        		<td align="right">First Name: <input type="text" name="empFirstName" /></td>
+        	</tr>
+        	
+        	<tr>
+        		<td align="right">Last Name: <input type="text" name="empLastName" /></td>
+        	</tr>
+        	
+        	<tr>
+        		<td align="right">Social Security Number: <input type="text" name="ssn" /></td>
+        	</tr>
+        	
+        	<tr>
+        		<td align="right">Position: <input type="text" name="position" /></td>
+        	</tr>
+        	
+        	<tr>
+        		<td align="right">Age: <input type="text" name="age" /></td>
+        	</tr>
+        	
+        	<tr>
+        		<td align="right">Admin: <input type="checkbox" name="isAdmin"/></td>
+        	</tr>
+          </table>
         <input type="submit" value="Add" />
         </form>
  
