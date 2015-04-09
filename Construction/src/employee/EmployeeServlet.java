@@ -15,6 +15,7 @@ public class EmployeeServlet extends HttpServlet {
  
     // Injected DAO EJB:
     @EJB EmployeeDao employeeDao;
+   // @EJB workorder.WorkOrderDao workorderDao;
  
     @Override
     protected void doGet(
@@ -38,9 +39,13 @@ public class EmployeeServlet extends HttpServlet {
         String position = request.getParameter("position");
         int age = Integer.parseInt(request.getParameter("age"));
         boolean isAdmin = Boolean.parseBoolean(request.getParameter("isAdmin"));
+       // int workId = Integer.parseInt(request.getParameter("workorderId"));
         
         if (firstName != null)
+        
+        	employeeDao.openTransaction();
             employeeDao.persist(new Employee(firstName, lastName, ssn, position, age, isAdmin));
+            employeeDao.commitTransaction();
        
  
         // Display the list of employees:

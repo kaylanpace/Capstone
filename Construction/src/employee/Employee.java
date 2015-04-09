@@ -1,9 +1,9 @@
 package employee;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+//import workorder.WorkOrder;
 
 @Entity
 public class Employee implements Serializable {
@@ -18,6 +18,10 @@ public class Employee implements Serializable {
     private String position;
     private int age;
     private boolean isAdmin;
+   
+    /*@ManyToOne(optional=true)
+    @JoinColumn(name="workorderId")
+    public WorkOrder workorder;*/
  
     // Constructors:
     public Employee() {
@@ -33,6 +37,14 @@ public class Employee implements Serializable {
         this.isAdmin = isAdmin;
     }
  
+   /* public WorkOrder getWorkOrder() {
+        return workorder;
+      }
+
+      public void setWorkOrder(WorkOrder workorder) {
+        this.workorder = workorder;
+      }*/
+      
     // String Representation:
     @Override
     public String toString() {

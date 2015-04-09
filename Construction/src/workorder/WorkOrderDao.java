@@ -1,4 +1,4 @@
-package employee;
+package workorder;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
  
 @Stateless
-public class EmployeeDao {
+public class WorkOrderDao {
 	
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("constructionPal.odb");
     EntityManager em = emf.createEntityManager();
@@ -27,16 +27,16 @@ public class EmployeeDao {
     	 em.close();
      }
     // Stores a new employee:
-    public void persist(Employee employee) {
-    		em.persist(employee);
+    public void persist(WorkOrder wo) {
+    		em.persist(wo);
     }
     
     
  
     // Retrieves all the employee:
-    public List<Employee> getAllGuests() {
-        TypedQuery<Employee> query = em.createQuery(
-            "SELECT g FROM Employee g ORDER BY g.id", Employee.class);
+    public List<WorkOrder> getWorkOrders() {
+        TypedQuery<WorkOrder> query = em.createQuery(
+            "SELECT g FROM Employee g ORDER BY g.id", WorkOrder.class);
         return query.getResultList();
     }
     
