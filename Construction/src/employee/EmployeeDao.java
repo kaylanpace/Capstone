@@ -24,7 +24,7 @@ public class EmployeeDao {
     }
      public void commitTransaction(){
     	 em.getTransaction().commit();
-    	 em.close();
+    	// em.close();
      }
     // Stores a new employee:
     public void persist(Employee employee) {
