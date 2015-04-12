@@ -24,7 +24,7 @@ public class WorkOrderDao {
     }
      public void commitTransaction(){
     	 em.getTransaction().commit();
-    	 em.close();
+    	 //em.close();
      }
     // Stores a new employee:
     public void persist(WorkOrder wo) {
