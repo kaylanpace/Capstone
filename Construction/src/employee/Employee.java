@@ -62,7 +62,7 @@ public class Employee implements Serializable {
 
 
 
-	/*public Long getEmpId() {
+	public Long getEmpId() {
 		return Id;
 	}
 
@@ -142,7 +142,7 @@ public class Employee implements Serializable {
 
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
-	}*/
+	}
 	
 	// String Representation:
     @Override
