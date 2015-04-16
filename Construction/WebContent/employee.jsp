@@ -132,7 +132,7 @@
             <!-- /.row -->
 
         <hr>
-
+		
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -158,7 +158,8 @@
                 for (Employee employee : employees) { %>
                     <li> <%=employee%> </li> <%
                 }
-            } %>
+            }
+              %>
         </ol><hr>
  
         <iframe src="http://www.objectdb.com/pw.html?jee-eclipse"

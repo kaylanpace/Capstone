@@ -4,43 +4,39 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-import workorder.WorkOrder;
+//import workorder.WorkOrder;
 
 
 
 @Entity
-@Table(name="Employee")
+//@Table(name="Employee")
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 	 
     // Persistent Fields:
-    @Id @GeneratedValue @Column
-    Long empId;
+    @Id @GeneratedValue 
+    Long Id;
     
-    @Column
+  
     private String empFirstName;
     
-    @Column
+
     private String empLastName;
     
-    @Column(unique=true, nullable=false)
     private int ssn;
-    
-    @Column
+ 
     private String position;
     
-    @Column
     private int age;
     
-    @Column
     private boolean isAdmin;
    
 	
     
    //Employee and WorkOrder Table join.
-    @ManyToOne(optional=true)
+  /*  @ManyToOne(optional=true)
     @JoinColumn(name="workorderId", nullable=true, updatable=false)
-    public workorder.WorkOrder workorder;
+    public workorder.WorkOrder workorder;*/
     
    
     
@@ -65,16 +61,16 @@ public class Employee implements Serializable {
     
     //Access Methods
  
-    public WorkOrder getWorkOrder() {
+  /*  public WorkOrder getWorkOrder() {
         return workorder;
     }
     
     public void setWorkOrder(WorkOrder workorder) {
         this.workorder = workorder;
-    }
+    }*/
 
 
-
+/*
 	public Long getEmpId() {
 		return empId;
 	}
@@ -155,12 +151,12 @@ public class Employee implements Serializable {
 
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
-	}
+	}*/
 	
 	// String Representation:
     @Override
     public String toString() {
-        return empId + " " + empFirstName + " " + empLastName
-        		+ " " + ssn + " " + position + " " + age + " " + isAdmin + " " + getWorkOrder();
+        return  empFirstName + " " + empLastName
+        		+ " " + ssn + " " + position + " " + age + " " + isAdmin;
     }
 }

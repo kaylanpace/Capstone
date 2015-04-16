@@ -2,7 +2,9 @@ package employee;
 
 
 import java.io.IOException;
+
 import javax.ejb.EJB;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,21 +35,26 @@ public class EmployeeServlet extends HttpServlet {
     		
         HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	employeeDao.openTransaction();
+    	//employeeDao.openTransaction();
         // Handle a new employee:
         String firstName = request.getParameter("empFirstName");
         String lastName = request.getParameter("empLastName");
         int ssn = Integer.parseInt(request.getParameter("ssn"));
         String position = request.getParameter("position");
         int age = Integer.parseInt(request.getParameter("age"));
+        
         boolean isAdmin = Boolean.parseBoolean(request.getParameter("isAdmin"));
-       // int workId = Integer.parseInt(request.getParameter("workorderId"));
+        
+        
+       /*`*/
+        
+        // int workId = Integer.parseInt(request.getParameter("workorderId"));
         
         if (firstName != null)
         
         {
             employeeDao.persist(new Employee(firstName, lastName, ssn, position, age, isAdmin));
-            employeeDao.commitTransaction();
+            //employeeDao.commitTransaction();
         }
  
         // Display the list of employees:
