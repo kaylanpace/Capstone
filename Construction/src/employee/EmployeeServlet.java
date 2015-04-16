@@ -35,7 +35,7 @@ public class EmployeeServlet extends HttpServlet {
     		
         HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	//employeeDao.openTransaction();
+    	employeeDao.openTransaction();
         // Handle a new employee:
         String firstName = request.getParameter("empFirstName");
         String lastName = request.getParameter("empLastName");
@@ -54,7 +54,7 @@ public class EmployeeServlet extends HttpServlet {
         
         {
             employeeDao.persist(new Employee(firstName, lastName, ssn, position, age, isAdmin));
-            //employeeDao.commitTransaction();
+            employeeDao.commitTransaction();
         }
  
         // Display the list of employees:

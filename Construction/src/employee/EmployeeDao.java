@@ -17,10 +17,10 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class EmployeeDao {
 	
-	//EntityManagerFactory emf = Persistence.createEntityManagerFactory("constructionPal.odb");
-    //EntityManager em = emf.createEntityManager();
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("constructionPal.odb");
+    EntityManager em = emf.createEntityManager();
     // Injected database connection:
-   @PersistenceContext private EntityManager em;
+   //@PersistenceContext private EntityManager em;
  
     public void openTransaction(){
     	em.getTransaction().begin();
