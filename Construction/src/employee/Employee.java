@@ -9,26 +9,17 @@ import javax.persistence.*;
 
 
 @Entity
-//@Table(name="Employee")
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 	 
     // Persistent Fields:
     @Id @GeneratedValue 
     Long Id;
-    
-  
     private String empFirstName;
-    
-
     private String empLastName;
-    
     private int ssn;
- 
     private String position;
-    
     private int age;
-    
     private boolean isAdmin;
    
 	
@@ -70,15 +61,15 @@ public class Employee implements Serializable {
     }*/
 
 
-/*
-	public Long getEmpId() {
-		return empId;
+
+	/*public Long getEmpId() {
+		return Id;
 	}
 
 
 
 	public void setEmpId(Long empId) {
-		this.empId = empId;
+		this.Id = empId;
 	}
 
 
