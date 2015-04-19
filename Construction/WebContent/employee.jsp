@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Social security number</label>
-                                            <input class="form-control" type="number" name="ssn" placeholder="Format: 123456789">
+                                            <input class="form-control" type="text" name="ssn" placeholder="Format: 123456789">
                                         </div>
                                         <div class="form-group">
                                             <label>Position</label>
@@ -76,11 +76,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Age</label>
-                                            <input class="form-control" type="number" name="age" placeholder="Format: 30">
+                                            <input class="form-control" type="text" name="age" placeholder="Format: 30">
                                         </div>
                                         <div class="form-group">
                                             <label>Administrator privileges</label>
-                                            <input class="form-control" type="boolean" name="isAdmin" placeholder="Format: 'True' or 'False'">
+                                            <input class="form-control" type="text" name="isAdmin" placeholder="Format: 'True' or 'False'">
                                         </div>
                                         <button type="submit" value="Add" class="btn btn-default">Submit</button>
                                         <button type="reset" class="btn btn-default">Reset</button>
