@@ -17,6 +17,7 @@ public class Building implements Serializable {
     @Id @GeneratedValue 
     Long Id;  
 	String buildingName;
+	@Temporal(TemporalType.DATE)
 	Date checkCycle;
 	String POC;
 	String street;
