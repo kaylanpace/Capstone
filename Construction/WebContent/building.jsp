@@ -58,10 +58,12 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form" method="POST" action="building">
+                                        <!--  
                                         <div class="form-group">
                                             <label>Building ID</label>
                                             <input class="form-control" type="number" name="Id" placeholder="Format: 12345">
                                         </div>
+                                        -->
                                         <div class="form-group">
                                             <label>Name</label>
                                             <input class="form-control" type="text" name="buildingName" placeholder="Building name">
@@ -72,7 +74,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Check Cycle</label>
-                                            <input class="form-control" type="date" name="checkCyle" placeholder="Format: ">
+                                            <input class="form-control" type="date" name="checkCycle" placeholder="Format: DD-MM-YYYY ">
                                         </div>
                                         <div class="form-group">
                                             <label>Street</label>
@@ -106,73 +108,66 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-         
-            
             
             <table id="buildingGrid" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>Building ID</th>
-                        <th>Building Name</th>
-                        <th>Point of Contact</th>
-                        <th>Check Cycle</th>
-                        <th>Street Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>ZIP Code</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Building ID</th>
-                        <th>Building Name</th>
-                        <th>Point of Contact</th>
-                        <th>Check Cycle</th>
-                        <th>Street Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>ZIP Code</th>
-                    </tr>
-                </tfoot>
-                    <%
-                      @SuppressWarnings("unchecked")
-                      List<Building> buildings = (List<Building>)request.getAttribute("buildings");
-                       if (buildings != null) {
-                        for (Building building : buildings) {
-                      %>
-                      <tr>
-                        <td>
-                            <%= building.getId() %>
-                        </td>
-                        <td>
-                            <%= building.getBuildingName() %>
-                        </td>
-                        <td>
-                            <%= building.getPOC() %>
-                        </td>
-                        <td>
-                            <%= building.getCheckCycle() %>
-                        </td>
-                        <td>
-                            <%= building.getStreet() %>
-                        </td>
-                        <td>
-                            <%= building.getCity() %>
-                        </td>
-                        <td>
-                            <%= building.getState() %>
-                        </td>
-                        <td>
-                            <%= building.getZip() %>
-                        </td>
-                      </tr>
-                      <%
-                       }
-                      %>
-                      <%
-                       }
-                      %>
-            </table>
+			    <thead>
+			        <tr>
+			            <th>Building Name</th>
+			            <th>Check Cycle</th>
+			            <th>Point of Contact</th>
+			            <th>Street</th>
+			            <th>City</th>
+			            <th>State</th>
+			            <th>Zip</th>
+			        </tr>
+			    </thead>
+			    <tfoot>
+			        <tr>
+			            <th>Building Name</th>
+			            <th>Check Cycle</th>
+			            <th>Point of Contact</th>
+			            <th>Street</th>
+			            <th>City</th>
+			            <th>State</th>
+			            <th>Zip</th>
+			        </tr>
+			    </tfoot>
+			        <%
+				      @SuppressWarnings("unchecked")
+				      List<Building> buildings = (List<Building>)request.getAttribute("buildings");
+				       if (buildings != null) {
+				        for (Building building : buildings) {
+				      %>
+			          <tr>
+			          	<td>
+			          		<%= building.getBuildingName() %>
+			          	</td>
+			          	<td>
+			          		<%= building.getCheckCycle() %>
+			          	</td>
+			          	<td>
+			          		<%= building.getPOC() %>
+			          	</td>
+			          	<td>
+			          		<%= building.getStreet() %>
+			          	</td>
+			          	<td>
+			          		<%= building.getCity() %>
+			          	</td>
+			          	<td>
+			          		<%= building.getState() %>
+			          	</td>
+			          	<td>
+			          		<%= building.getZip() %>
+			          	</td>
+			          </tr>
+			          <%
+				       }
+				      %>
+				      <%
+				       }
+				      %>
+			</table>
 
         <hr>
 

@@ -28,7 +28,7 @@ public class BuildingServlet extends HttpServlet{
             throws ServletException, IOException {
     	
         // Display the list of buildings:
-       request.setAttribute("builidng", BuildingDao.getAllBuildings());
+       request.setAttribute("buildings", BuildingDao.getAllBuildings());
         request.getRequestDispatcher("/building.jsp").forward(request, response);
         return;
     }
@@ -40,17 +40,20 @@ public class BuildingServlet extends HttpServlet{
  
         // Handle a new building:
     	BuildingDao.openTransaction();
-        String buildingname = request.getParameter("buildingname");
-        
-        String startDateStr = request.getParameter("startDate");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date checkCycle = null;
-		try {
-			checkCycle = sdf.parse(startDateStr);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	/*
+    	String buildingIdstr = request.getParameter("Id");
+    	Long buildingId = Long.parseLong(buildingIdstr);
+    	*/
+        String buildingname = request.getParameter("buildingName");
+
+        String checkCyclestr = request.getParameter("checkCycle");
+        Date checkcycle = null;
+        try {
+        checkcycle = new SimpleDateFormat("MM-dd-yyyy").parse(checkCyclestr);
+        }
+        catch (ParseException e) {
+        e.printStackTrace();
+        }
         
         String poc = request.getParameter("POC");
         String street = request.getParameter("street");
@@ -59,11 +62,10 @@ public class BuildingServlet extends HttpServlet{
 		int zip = Integer.parseInt(request.getParameter("zip"));
 		
         if (buildingname != null){
-        	BuildingDao.persist(new Building(buildingname, checkCycle, poc, street, city, state, zip));
+        	BuildingDao.persist(new Building(buildingname, checkcycle, poc, street, city, state, zip));
         	BuildingDao.commitTransaction();
         }
        
-        
         doGet(request, response);
     }
 }
