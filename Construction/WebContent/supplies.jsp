@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Expiration Date</label>
-                                            <input class="form-control" type="date" name="expirationDate" placeholder="Format: ">
+                                            <input class="form-control" type="date" name="expirationDate" placeholder="Format: MM-DD-YYYY">
                                         </div>
                                         <div class="form-group">
                                             <label>Vendor POC</label>
@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Check Cycle</label>
-                                            <input class="form-control" type="date" name="checkCycle" placeholder="Format: ">
+                                            <input class="form-control" type="date" name="checkCycle" placeholder="Format: MM-DD-YYYY">
                                         </div>
                                         <button type="submit" value="Add" class="btn btn-default">Submit</button>
                                         <button type="reset" class="btn btn-default">Reset</button>
@@ -130,9 +130,9 @@
                 </tfoot>
                     <%
                       @SuppressWarnings("unchecked")
-                      List<Supplies> suppliess = (List<Supplies>)request.getAttribute("suppliess");
-                       if (suppliess != null) {
-                        for (Supplies supplies : suppliess) {
+                      List<Supplies> suppliesList = (List<Supplies>)request.getAttribute("suppliesList");
+                       if (suppliesList != null) {
+                        for (Supplies supplies : suppliesList) {
                       %>
                       <tr>
                         <td>

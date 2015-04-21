@@ -1,4 +1,4 @@
-package schedule;
+package supplies;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class SuppliesServlet extends HttpServlet{
             throws ServletException, IOException {
     	
         // Display the list of supplies:
-       request.setAttribute("supplies", SuppliesDao.getAllSupplies());
+       request.setAttribute("suppliesList", SuppliesDao.getAllSupplies());
         request.getRequestDispatcher("/supplies.jsp").forward(request, response);
         return;
     }
@@ -67,8 +67,8 @@ public class SuppliesServlet extends HttpServlet{
         }
 		
         if (supplyName != null){
-        	SuppliesDao.persist(new Supplies(supplyName, quantity, UOM, description, expirationDate, vendorPOC, checkCycle ));
-        	SuppliestDao.commitTransaction();
+        	SuppliesDao.persist(new Supplies(supplyName, quantity, UOM, description, expirationDate, vendorPOC, checkcycle ));
+        	SuppliesDao.commitTransaction();
         }
        
         

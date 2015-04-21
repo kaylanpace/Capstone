@@ -70,7 +70,7 @@ public class ScheduleServlet extends HttpServlet{
 		
         if (startDate != null){
         	ScheduleDao.persist(new Schedule(startDate, finishDate, expectedFinish));
-        	ScheduletDao.commitTransaction();
+        	ScheduleDao.commitTransaction();
         }
        
         

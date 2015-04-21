@@ -32,7 +32,20 @@ public class Schedule implements Serializable {
     }
     
     //Access Methods
-
+    public Date getStartDate()
+    {
+    	return startDate;
+    }
+    
+    public Date getFinishDate()
+    {
+    	return finishDate;
+    }
+    
+    public Date getExpectedFinish()
+    {
+    	return expectedFinish;
+    }
 		
 	// String Representation:
     @Override

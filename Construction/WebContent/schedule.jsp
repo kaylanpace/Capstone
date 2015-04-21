@@ -60,15 +60,15 @@
                                     <form role="form" method="POST" action="schedule">
                                         <div class="form-group">
                                             <label>Start Date</label>
-                                            <input class="form-control" type="date" name="startDate" placeholder="Format: ">
+                                            <input class="form-control" type="date" name="startDate" placeholder="Format: MM-DD-YYYY">
                                         </div>
                                         <div class="form-group">
                                             <label>Finish Date</label>
-                                            <input class="form-control" type="date" name="finishDate" placeholder="Format: ">
+                                            <input class="form-control" type="date" name="finishDate" placeholder="Format: MM-DD-YYYY">
                                         </div>
                                         <div class="form-group">
                                             <label>Expected Finish</label>
-                                            <input class="form-control" type="date" name="expectedFinish" placeholder="Format: ">
+                                            <input class="form-control" type="date" name="expectedFinish" placeholder="Format: MM-DD-YYYY">
                                         </div>
                                         <button type="submit" value="Add" class="btn btn-default">Submit</button>
                                         <button type="reset" class="btn btn-default">Reset</button>

@@ -28,7 +28,7 @@ public class EquipmentServlet extends HttpServlet{
             throws ServletException, IOException {
     	
         // Display the list of equipment:
-       request.setAttribute("equipments", EquipmentDao.getAllEquipments());
+       request.setAttribute("equipments", EquipmentDao.getAllEquipment());
         request.getRequestDispatcher("/equipment.jsp").forward(request, response);
         return;
     }
@@ -56,7 +56,7 @@ public class EquipmentServlet extends HttpServlet{
         }
 		
         if (equipName != null){
-        	EquipmentDao.persist(new Equipment(equipName, equipType, description, vendorPOC, checkCycle));
+        	EquipmentDao.persist(new Equipment(equipName, equipType, description, vendorPOC, checkcycle));
         	EquipmentDao.commitTransaction();
         }
        

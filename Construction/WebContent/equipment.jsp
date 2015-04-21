@@ -57,14 +57,10 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" method="POST" action="equipment">
-                                        <div class="form-group">
-                                            <label>Equipment ID</label>
-                                            <input class="form-control" type="number" name="Id" placeholder="Format: 12345">
-                                        </div>
+                                    <form role="form" method="POST" action="equipment">             
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input class="form-control" type="text" name="equipName" placeholder="Equipment Name">
+                                            <input class="form-control" type="text" name="equipName" placeholder="Equipment name">
                                         </div>
                                         <div class="form-group">
                                             <label>Type</label>
@@ -80,7 +76,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Check Cycle</label>
-                                            <input class="form-control" type="date" name="checkCycle" placeholder="Check cycle date">
+                                            <input class="form-control" type="date" name="checkCycle" placeholder="Format: MM-DD-YYYY">
                                         </div>
                                         <button type="submit" value="Add" class="btn btn-default">Submit</button>
                                         <button type="reset" class="btn btn-default">Reset</button>
@@ -103,7 +99,6 @@
             <table id="equipmentGrid" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>Equipment ID</th>
                         <th>Name</th>
                         <th>Type</th>
                         <th>Description</th>
@@ -113,7 +108,6 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Equipment ID</th>
                         <th>Name</th>
                         <th>Type</th>
                         <th>Description</th>
@@ -128,10 +122,6 @@
                             for (Equipment equipment : equipments) {
                           %>
                       <tr>
-                            
-                            <td>
-                                    <%= equipment.getId() %>
-                            </td>
                             <td>
                                     <%= equipment.getEquipName() %>
                             </td>
