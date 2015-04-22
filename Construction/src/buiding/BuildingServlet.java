@@ -49,7 +49,7 @@ public class BuildingServlet extends HttpServlet{
         String checkCyclestr = request.getParameter("checkCycle");
         Date checkcycle = null;
         try {
-        checkcycle = new SimpleDateFormat("MM-dd-yyyy").parse(checkCyclestr);
+        checkcycle = new SimpleDateFormat("MM/dd/yyyy").parse(checkCyclestr);
         }
         catch (ParseException e) {
         e.printStackTrace();

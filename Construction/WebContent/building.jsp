@@ -5,8 +5,8 @@
     "http://www.w3.org/TR/html4/loose.dtd">
  
 <html>
-    <head>
-    
+    <head>  
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
+   
     <!-- MetisMenu CSS -->
     <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
@@ -33,6 +33,10 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!--  Date Picker -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
  
     <body>    
 
@@ -73,9 +77,21 @@
                                             <input class="form-control" type="text" name="POC" placeholder="Point of contact">
                                         </div>
                                         <div class="form-group">
-                                            <label>Check Cycle</label>
-                                            <input class="form-control" type="date" name="checkCycle" placeholder="Format: DD-MM-YYYY ">
-                                        </div>
+                                            <label for="dp">Check Cycle</label>
+                                            <input class="form-control" type="date" id="dp" name="checkCycle" placeholder="Format: MM/DD/YYYY ">
+                                        </div> 
+                                        
+                                        <script src="js/jquery.min.js"></script>
+    									<script src="js/jquery-ui.min.js"></script>
+    									<script src="js/bootstrap.min.js"></script>
+   										<script>
+     									 $( "#dp" ).datepicker({
+										//changeMonth: true,
+										//changeYear: true
+										 });
+    									</script>
+
+                                        
                                         <div class="form-group">
                                             <label>Street</label>
                                             <input class="form-control" type="text" name="street" placeholder="Street address">

@@ -33,6 +33,10 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!--  Date Picker -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
  
     <body>
 
@@ -75,9 +79,20 @@
                                             <input class="form-control" type="text" name="vendorPOC" placeholder="Point of contact">
                                         </div>
                                         <div class="form-group">
-                                            <label>Check Cycle</label>
-                                            <input class="form-control" type="date" name="checkCycle" placeholder="Format: MM-DD-YYYY">
-                                        </div>
+                                            <label for="dp">Check Cycle</label>
+                                            <input class="form-control" type="date" id="dp" name="checkCycle" placeholder="Format: MM/DD/YYYY ">
+                                        </div> 
+                                        
+                                        <script src="js/jquery.min.js"></script>
+    									<script src="js/jquery-ui.min.js"></script>
+    									<script src="js/bootstrap.min.js"></script>
+   										<script>
+     									 $( "#dp" ).datepicker({
+										//changeMonth: true,
+										//changeYear: true
+										 });
+    									</script>
+                                        
                                         <button type="submit" value="Add" class="btn btn-default">Submit</button>
                                         <button type="reset" class="btn btn-default">Reset</button>
                                     <!-- <input type="submit" value="Add" /> -->
